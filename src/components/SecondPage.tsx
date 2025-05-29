@@ -95,23 +95,58 @@ const SecondPage = ({ onPrev }: SecondPageProps) => {
               />
             </div>
             
-            <div className="space-y-6 text-center">
-              <h3 className="text-2xl md:text-3xl font-bold text-pink-600 mb-6">
+            <div className="space-y-6 text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-pink-600 mb-6 text-center">
                 🎂 Selamat Ulang Tahun Erica! 🎂
               </h3>
               
-              <div className="text-lg md:text-xl text-pink-700 leading-relaxed space-y-4">
+              <div className="text-base md:text-lg text-pink-700 leading-relaxed space-y-6">
                 <p>
-                  Di hari yang istimewa ini, aku ingin mengucapkan selamat ulang tahun untuk seseorang yang sangat berarti! 🌟
+                  Terlahir sebagai manusia yang ceritanya dirangkai dengan hebat oleh Sang Penulis Semesta, aku bersyukur dengan dihadirkannya engkau di waktu yang tak terduga. Kau sungguh tertulis indah di halaman paling menyenangkan dalam hidupku.
                 </p>
+                
                 <p>
-                  Semoga di tahun yang baru ini, Erica selalu dikelilingi kebahagiaan, kesehatan, dan cinta dari orang-orang terkasih. 💕
+                  Senang mengenal manusia penuh kejutan sepertimu,<br/>
+                  yang bisa membuat tawa hanya lewat tingkah sederhana,<br/>
+                  yang kadang membuat kesal dengan seribu keusilannya.<br/>
+                  Tapi di situlah letak pesonamu—tak pernah bisa ditebak, tapi selalu menyenangkan.
                 </p>
+                
                 <p>
-                  Semoga semua impian dan harapanmu menjadi kenyataan, dan setiap hari membawa kejutan-kejutan indah untukmu! ✨
+                  Walaupun kita belum pernah benar-benar ngobrol secara langsung,<br/>
+                  rasanya seperti sudah lama saling kenal.<br/>
+                  Kehadiranmu tetap terasa hangat,<br/>
+                  seperti pelangi yang muncul diam-diam setelah hujan.
                 </p>
-                <p className="text-xl font-semibold text-pink-600">
-                  Selamat bertambah umur, semoga panjang umur dan bahagia selalu! 🎉🎈
+                
+                <p>
+                  Aku tahu, Erica…<br/>
+                  kamu sering menyembunyikan banyak hal di balik senyummu.<br/>
+                  Ada banyak rasa yang kamu pendam sendiri,<br/>
+                  banyak hal yang kamu tahan demi nggak bikin orang lain khawatir.<br/>
+                  Kamu takut kehilangan, tapi tetap memilih bertahan dan jadi kuat,<br/>
+                  meski di dalam kamu sedang berjuang sendirian.
+                </p>
+                
+                <p>
+                  Di hari spesialmu ini, aku cuma ingin bilang:<br/>
+                  Kamu hebat. Kamu layak dipeluk oleh dunia,<br/>
+                  layak untuk didengarkan, dipahami, dan dicintai tanpa syarat.<br/>
+                  Jangan terlalu sering menahan semuanya sendiri, ya.<br/>
+                  Kamu nggak harus selalu jadi kuat sendirian.
+                </p>
+                
+                <p>
+                  Selamat ulang tahun, Erica Meliani.<br/>
+                  Semoga tahun ini hatimu jauh lebih tenang,<br/>
+                  dan kamu bisa merasa cukup… tanpa harus menyembunyikan luka.<br/>
+                  Semoga kamu diberi keberanian untuk terus mencintai hidup,<br/>
+                  meskipun kadang dunia terasa berat.
+                </p>
+                
+                <p className="text-center font-semibold text-pink-600 text-lg">
+                  Tetap jadi kamu, dengan seluruh keunikan dan hangatnya.<br/>
+                  Karena dirimu, bahkan dalam diam, sudah cukup indah. ✨
                 </p>
               </div>
               
