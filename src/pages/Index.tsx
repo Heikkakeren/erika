@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Cake, Star, Balloon, Ribbon } from 'lucide-react';
+import { Cake, Star, Heart, Ribbon } from 'lucide-react';
 
 const Index = () => {
   const [showGreeting, setShowGreeting] = useState(false);
@@ -36,7 +36,7 @@ const Index = () => {
             top: '100%'
           }}
         >
-          <Balloon 
+          <Heart 
             className="text-pink-400 w-8 h-8 md:w-10 md:h-10 animate-float" 
             fill="currentColor"
           />
@@ -112,7 +112,7 @@ const Index = () => {
                   className="w-full h-64 md:h-80 object-cover"
                 />
                 <div className="absolute top-4 left-4">
-                  <Balloon className="text-pink-500 w-8 h-8 animate-bounce" fill="currentColor" />
+                  <Heart className="text-pink-500 w-8 h-8 animate-bounce" fill="currentColor" />
                 </div>
                 <div className="absolute bottom-4 right-4">
                   <Star className="text-yellow-400 w-6 h-6 animate-spin" fill="currentColor" />
@@ -152,7 +152,7 @@ const Index = () => {
             <Ribbon className="w-8 h-8 animate-pulse" />
             <Cake className="w-10 h-10 animate-bounce" fill="currentColor" />
             <Star className="w-6 h-6 animate-spin" fill="currentColor" />
-            <Balloon className="w-8 h-8 animate-bounce" fill="currentColor" />
+            <Heart className="w-8 h-8 animate-bounce" fill="currentColor" />
             <Star className="w-6 h-6 animate-spin" fill="currentColor" />
             <Cake className="w-10 h-10 animate-bounce" fill="currentColor" />
             <Ribbon className="w-8 h-8 animate-pulse" />
@@ -177,7 +177,7 @@ const Index = () => {
         ))}
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(180deg); }
