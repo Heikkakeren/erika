@@ -1,6 +1,50 @@
-
 let currentPage = 1;
 let isPlaying = false;
+let audio = null;
+
+// Initialize audio when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    audio = document.getElementById('backgroundMusic');
+    
+    // Set volume to a comfortable level
+    if (audio) {
+        audio.volume = 0.5;
+        
+        // Handle audio loading errors
+        audio.addEventListener('error', function() {
+            console.log('Audio file not found. Please add love.mp3 to your project directory.');
+        });
+        
+        // Update button when audio ends (if not looping)
+        audio.addEventListener('ended', function() {
+            if (!audio.loop) {
+                isPlaying = false;
+                updatePlayButton();
+            }
+        });
+    }
+    
+    // Ensure page 1 is visible initially
+    document.getElementById('page1').classList.add('active');
+    
+    // Add some random animation delays to floating balloons
+    const balloons = document.querySelectorAll('.floating-balloon');
+    balloons.forEach((balloon, index) => {
+        balloon.style.animationDelay = (Math.random() * 3) + 's';
+        balloon.style.animationDuration = (4 + Math.random() * 2) + 's';
+    });
+    
+    // Add random delays to sparkles
+    const sparkles = document.querySelectorAll('.sparkle');
+    sparkles.forEach((sparkle, index) => {
+        sparkle.style.animationDelay = (Math.random() * 3) + 's';
+    });
+    
+    // Console welcome message
+    console.log('🎉 Happy Birthday Website Loaded! 🎂');
+    console.log('Use arrow keys or swipe to navigate between pages');
+    console.log('Add love.mp3 file to enable background music');
+});
 
 // Page Navigation Functions
 function nextPage() {
@@ -67,42 +111,49 @@ function triggerPage2Animations() {
 
 // Music Player Functions
 function toggleMusic() {
+    if (!audio) {
+        console.log('Audio not available');
+        return;
+    }
+    
+    isPlaying = !isPlaying;
+    
+    if (isPlaying) {
+        audio.play().then(() => {
+            console.log('Playing "Love" by Wave to Earth');
+            updatePlayButton();
+        }).catch((error) => {
+            console.log('Could not play audio:', error);
+            isPlaying = false;
+            updatePlayButton();
+        });
+    } else {
+        audio.pause();
+        console.log('Pausing music');
+        updatePlayButton();
+    }
+}
+
+function updatePlayButton() {
     const playBtn = document.getElementById('playBtn');
     const playIcon = document.getElementById('playIcon');
     const playText = document.getElementById('playText');
-    
-    isPlaying = !isPlaying;
     
     if (isPlaying) {
         playBtn.classList.add('playing');
         playIcon.textContent = '⏸️';
         playText.textContent = 'Pause';
-        console.log('Playing "Love" by Wave to Earth');
-        
-        // Add some visual feedback
-        playBtn.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            playBtn.style.transform = 'scale(1)';
-        }, 150);
-        
-        // You can add actual audio implementation here
-        // For example: audio.play();
-        
     } else {
         playBtn.classList.remove('playing');
         playIcon.textContent = '▶️';
         playText.textContent = 'Play';
-        console.log('Pausing music');
-        
-        // Add some visual feedback
-        playBtn.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            playBtn.style.transform = 'scale(1)';
-        }, 150);
-        
-        // You can add actual audio implementation here
-        // For example: audio.pause();
     }
+    
+    // Add visual feedback
+    playBtn.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        playBtn.style.transform = 'scale(1)';
+    }, 150);
 }
 
 // Keyboard Navigation
@@ -147,29 +198,6 @@ function handleSwipe() {
         }
     }
 }
-
-// Initialize page animations on load
-document.addEventListener('DOMContentLoaded', function() {
-    // Ensure page 1 is visible initially
-    document.getElementById('page1').classList.add('active');
-    
-    // Add some random animation delays to floating balloons
-    const balloons = document.querySelectorAll('.floating-balloon');
-    balloons.forEach((balloon, index) => {
-        balloon.style.animationDelay = (Math.random() * 3) + 's';
-        balloon.style.animationDuration = (4 + Math.random() * 2) + 's';
-    });
-    
-    // Add random delays to sparkles
-    const sparkles = document.querySelectorAll('.sparkle');
-    sparkles.forEach((sparkle, index) => {
-        sparkle.style.animationDelay = (Math.random() * 3) + 's';
-    });
-    
-    // Console welcome message
-    console.log('🎉 Happy Birthday Website Loaded! 🎂');
-    console.log('Use arrow keys or swipe to navigate between pages');
-});
 
 // Easter egg - konami code for extra effects
 let konamiCode = [];
